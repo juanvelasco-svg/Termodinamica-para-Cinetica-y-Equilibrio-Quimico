@@ -106,7 +106,7 @@ function initializeCalculators() {
     // Calculadora de Equilibrio
     const calcEquilibriumBtn = document.getElementById('calc-equilibrium');
     if (calcEquilibriumBtn) {
-        EquilibriumBtn.addEventListener('click', calculateEquilibrium);
+        calcEquilibriumBtn.addEventListener('click', calculateEquilibrium);
     }
     
     // Radio buttons para el modo de cálculo de equilibrio
@@ -614,4 +614,3 @@ window.addEventListener('resize', function() {
         // Ajustes específicos para móvil si son necesarios
     }
 });
-        calc
