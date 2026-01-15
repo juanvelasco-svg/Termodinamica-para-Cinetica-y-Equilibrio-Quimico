@@ -1172,3 +1172,392 @@ header h1 {
     background: var(--primary);
     color: white;
     font-weight: 700;
+}
+.connection-table tr.products-favor {
+background: #c8e6c9;
+}
+.connection-table tr.products-moderate {
+background: #e8f5e9;
+}
+.connection-table tr.balanced {
+background: #fff9c4;
+}
+.connection-table tr.reactants-moderate {
+background: #ffe0b2;
+}
+.connection-table tr.reactants-favor {
+background: #ffccbc;
+}
+.bar-visual {
+position: relative;
+height: 30px;
+}
+
+.bar {
+height: 100%;
+border-radius: 4px;
+transition: width 0.5s ease;
+}
+/* ===========================
+CALCULADORA DE EQUILIBRIO
+=========================== */
+.calc-mode {
+display: flex;
+gap: var(--spacing-md);
+margin-bottom: var(--spacing-md);
+}
+.calc-mode label {
+display: flex;
+align-items: center;
+gap: var(--spacing-xs);
+cursor: pointer;
+}
+.hidden {
+display: none !important;
+}
+/* ===========================
+CASO HABER
+=========================== */
+.reaction-main {
+font-family: var(--font-mono);
+font-size: 1.5rem;
+font-weight: 700;
+text-align: center;
+padding: var(--spacing-md);
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+border-radius: var(--border-radius);
+margin: var(--spacing-md) 0;
+}
+.haber-analysis {
+display: grid;
+gap: var(--spacing-lg);
+margin-top: var(--spacing-md);
+}
+.thermo-data,
+.equilibrium-constant,
+.temperature-effect {
+background: white;
+padding: var(--spacing-lg);
+border-radius: var(--border-radius);
+border: 2px solid var(--light);
+}
+
+.thermo-data h5,
+.equilibrium-constant h5,
+.temperature-effect h5 {
+color: var(--primary);
+margin-bottom: var(--spacing-md);
+padding-bottom: var(--spacing-sm);
+border-bottom: 2px solid var(--accent);
+}
+.calculation {
+font-family: var(--font-mono);
+margin: var(--spacing-sm) 0;
+}
+.result-big {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--success);
+text-align: center;
+margin: var(--spacing-md) 0;
+}
+.interpretation {
+text-align: center;
+font-weight: 600;
+color: var(--accent);
+}
+
+.temp-table {
+width: 100%;
+border-collapse: collapse;
+margin: var(--spacing-md) 0;
+}
+.temp-table th,
+.temp-table td {
+padding: var(--spacing-sm);
+border: 1px solid var(--light);
+text-align: center;
+}
+.temp-table th {
+background: var(--secondary);
+color: white;
+}
+.favor-products {
+color: var(--success);
+font-weight: 700;
+}
+.favor-reactants {
+color: var(--danger);
+font-weight: 700;
+}
+
+.paradox-industrial {
+background: #fff3e0;
+padding: var(--spacing-md);
+border-radius: var(--border-radius);
+margin-top: var(--spacing-md);
+border-left: 4px solid var(--warning);
+}
+.paradox-industrial ul {
+margin-top: var(--spacing-sm);
+margin-left: var(--spacing-lg);
+}
+/* ===========================
+SÍNTESIS FINAL
+=========================== */
+.synthesis-box {
+background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+color: white;
+}
+.synthesis-box h4 {
+color: white;
+margin-bottom: var(--spacing-lg);
+}
+
+.three-pillars {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+}
+.pillar {
+background: rgba(255,255,255,0.95);
+padding: var(--spacing-lg);
+border-radius: var(--border-radius);
+text-align: center;
+color: var(--primary);
+}
+.pillar h5 {
+font-size: 1.5rem;
+margin-bottom: var(--spacing-md);
+}
+.pillar-question {
+font-size: 1.1rem;
+font-weight: 700;
+color: var(--accent);
+margin: var(--spacing-sm) 0;
+}
+
+.pillar-tool {
+font-family: var(--font-mono);
+background: var(--light);
+padding: var(--spacing-xs);
+border-radius: 4px;
+margin: var(--spacing-xs) 0;
+}
+.integration-message {
+background: rgba(255,255,255,0.95);
+padding: var(--spacing-lg);
+border-radius: var(--border-radius);
+color: var(--primary);
+}
+.integration-message .big-text {
+color: var(--primary);
+margin-bottom: var(--spacing-md);
+}
+.integration-message p {
+margin: var(--spacing-xs) 0;
+}
+/* ===========================
+MENSAJE FINAL
+=========================== */
+.final-message {
+background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+color: white;
+text-align: center;
+}
+.final-message h4 {
+color: white;
+margin-bottom: var(--spacing-md);
+}
+.next-steps {
+text-align: left;
+display: inline-block;
+margin-top: var(--spacing-md);
+}
+.next-steps li {
+margin: var(--spacing-sm) 0;
+font-size: 1.1rem;
+}
+/* ===========================
+BOTONES DE NAVEGACIÓN
+=========================== */
+.navigation-buttons {
+display: flex;
+justify-content: space-between;
+gap: var(--spacing-md);
+margin-top: var(--spacing-xl);
+padding-top: var(--spacing-lg);
+border-top: 2px solid var(--light);
+}
+.nav-btn {
+padding: var(--spacing-md) var(--spacing-xl);
+border: none;
+border-radius: var(--border-radius);
+font-weight: 700;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.prev-btn {
+background: var(--secondary);
+color: white;
+}
+
+.next-btn {
+background: var(--success);
+color: white;
+}
+.restart-btn {
+background: var(--warning);
+color: white;
+}
+.nav-btn:hover {
+transform: scale(1.05);
+box-shadow: var(--shadow-md);
+}
+/* ===========================
+MODAL
+=========================== */
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.7);
+animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+background-color: white;
+margin: 5% auto;
+padding: var(--spacing-xl);
+border-radius: var(--border-radius-lg);
+width: 90%;
+max-width: 700px;
+max-height: 80vh;
+overflow-y: auto;
+box-shadow: var(--shadow-lg);
+animation: slideIn 0.3s ease;
+}
+@keyframes slideIn {
+from {
+transform: translateY(-50px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+.close:hover,
+.close:focus {
+color: var(--danger);
+}
+/* ===========================
+RESPONSIVIDAD
+=========================== */
+@media (max-width: 768px) {
+header h1 {
+font-size: 1.8rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+}
+
+.level-nav {
+    flex-direction: column;
+}
+
+.level-btn {
+    min-width: 100%;
+}
+
+.enthalpy-types,
+.two-columns {
+    grid-template-columns: 1fr;
+}
+
+.three-pillars {
+    grid-template-columns: 1fr;
+}
+
+.navigation-buttons {
+    flex-direction: column;
+}
+
+.nav-btn {
+    width: 100%;
+}
+
+.formula-main {
+    font-size: 1.5rem;
+}
+
+.formula-parts {
+    grid-template-columns: 1fr;
+}
+   
+}
+@media (max-width: 480px) {
+body {
+padding: var(--spacing-xs);
+}
+
+.content-area {
+    padding: var(--spacing-md);
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+.level-content h2 {
+    font-size: 1.5rem;
+}
+
+.examples-grid {
+    grid-template-columns: 1fr;
+}
+
+.rules-grid {
+    grid-template-columns: 1fr;
+}
+
+}
+/* ===========================
+PRINT STYLES
+=========================== */
+@media print {
+body {
+background: white;
+}
+
+.level-nav,
+.navigation-buttons,
+.interactive-calculator,
+.interactive-gibbs,
+.interactive-equilibrium,
+.microstate-simulator {
+    display: none;
+}
+
+.level-content {
+    display: block !important;
+    page-break-after: always;
+}
+}
