@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';">
     <title>Puente Conceptual: Termodinámica al Equilibrio Químico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -124,10 +125,10 @@
                 <div class="interactive-calculator">
                     <h4>🧮 Calculadora de ΔH</h4>
                     <div class="calc-inputs">
-                        <label>
+                        <label for="h-products">
                             H (productos): <input type="number" id="h-products" value="-484"> kJ
                         </label>
-                        <label>
+                        <label for="h-reactants">
                             H (reactivos): <input type="number" id="h-reactants" value="0"> kJ
                         </label>
                         <button id="calc-enthalpy">Calcular</button>
@@ -171,12 +172,12 @@
                 <div class="microstate-simulator">
                     <h4>🎲 Simulador de Microestados</h4>
                     <div class="simulator-controls">
-                        <label>
+                        <label for="particle-count">
                             Número de partículas: 
                             <input type="range" id="particle-count" min="3" max="12" value="6">
                             <span id="particle-display">6</span>
                         </label>
-                        <label>
+                        <label for="volume-size">
                             Volumen del recipiente:
                             <input type="range" id="volume-size" min="1" max="3" value="1">
                             <span id="volume-display">Pequeño</span>
@@ -357,15 +358,15 @@
                     <h4>🧪 Calculadora Interactiva de ΔG</h4>
                     <div class="gibbs-calculator">
                         <div class="calc-group">
-                            <label>
+                            <label for="delta-h">
                                 ΔH (kJ/mol):
                                 <input type="number" id="delta-h" value="6.01" step="0.01">
                             </label>
-                            <label>
+                            <label for="delta-s">
                                 ΔS (J/mol·K):
                                 <input type="number" id="delta-s" value="22" step="0.1">
                             </label>
-                            <label>
+                            <label for="temperature">
                                 T (K):
                                 <input type="number" id="temperature" value="298" step="1">
                             </label>
@@ -681,21 +682,21 @@
                         </label>
                     </div>
                     <div class="calc-inputs-eq" id="k-to-g-inputs">
-                        <label>
+                        <label for="k-value">
                             Constante de equilibrio K:
                             <input type="number" id="k-value" value="1" step="any">
                         </label>
-                        <label>
+                        <label for="temp-k">
                             Temperatura (K):
                             <input type="number" id="temp-k" value="298">
                         </label>
                     </div>
                     <div class="calc-inputs-eq hidden" id="g-to-k-inputs">
-                        <label>
+                        <label for="dg-value">
                             ΔG° (kJ/mol):
                             <input type="number" id="dg-value" value="0" step="0.1">
                         </label>
-                        <label>
+                        <label for="temp-g">
                             Temperatura (K):
                             <input type="number" id="temp-g" value="298">
                         </label>
