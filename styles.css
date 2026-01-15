@@ -1561,3 +1561,67 @@ background: white;
     page-break-after: always;
 }
 }
+/* ===========================
+   ESTILOS PARA LA IMAGEN DEL VALLE
+   =========================== */
+.energy-valley-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.valley-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--light);
+    margin-bottom: var(--spacing-md);
+}
+
+.image-explanation {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: #f9f9f9;
+    border-radius: var(--border-radius);
+}
+
+.image-explanation h5 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--accent);
+}
+
+.image-explanation ul {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.image-explanation li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.image-source {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px dashed #ddd;
+}
+
+/* Responsividad para la imagen */
+@media (max-width: 768px) {
+    .energy-valley-image {
+        padding: var(--spacing-sm);
+    }
+    
+    .image-explanation ul {
+        margin-left: var(--spacing-md);
+    }
+}
