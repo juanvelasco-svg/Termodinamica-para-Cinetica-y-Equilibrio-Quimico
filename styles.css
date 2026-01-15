@@ -1,0 +1,1174 @@
+/* ===========================
+   RESET Y VARIABLES
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores pedagógicos */
+    --color-exothermic: #e74c3c;
+    --color-endothermic: #3498db;
+    --color-spontaneous: #27ae60;
+    --color-non-spontaneous: #e67e22;
+    --color-equilibrium: #9b59b6;
+    
+    /* Colores base */
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    
+    /* Tipografía */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'Courier New', monospace;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Bordes */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ===========================
+   ESTILOS GLOBALES
+   =========================== */
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: var(--spacing-md);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ===========================
+   BARRA DE PROGRESO
+   =========================== */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: var(--light);
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success), var(--accent));
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* ===========================
+   NAVEGACIÓN DE NIVELES
+   =========================== */
+.level-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background: var(--light);
+    border-bottom: 3px solid var(--accent);
+}
+
+.level-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--secondary);
+    background: white;
+    color: var(--secondary);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.level-btn:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.level-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.level-btn.completed {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+
+/* ===========================
+   ÁREA DE CONTENIDO
+   =========================== */
+.content-area {
+    padding: var(--spacing-lg);
+    min-height: 600px;
+}
+
+.level-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.level-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.level-content h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--accent);
+}
+
+/* ===========================
+   CAJAS DE CONTENIDO
+   =========================== */
+.intro-box,
+.insight-box,
+.paradox-box,
+.law-box,
+.concept-box,
+.distinction-box,
+.key-insight-box,
+.synthesis-box,
+.final-message {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.intro-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.big-question {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.insight-box {
+    background: #e8f5e9;
+    border-left: 5px solid var(--success);
+}
+
+.insight-box h4 {
+    color: var(--success);
+    margin-bottom: var(--spacing-sm);
+}
+
+.paradox-box {
+    background: #fff3e0;
+    border-left: 5px solid var(--warning);
+}
+
+.paradox-box h4 {
+    color: var(--warning);
+    margin-bottom: var(--spacing-sm);
+}
+
+.question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--danger);
+    margin: var(--spacing-sm) 0;
+}
+
+.law-box {
+    background: #f3e5f5;
+    border: 3px solid var(--equilibrium);
+}
+
+.law-statement {
+    text-align: center;
+}
+
+.law-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--equilibrium);
+    margin-bottom: var(--spacing-md);
+}
+
+.law-implication {
+    font-style: italic;
+    color: #666;
+}
+
+.concept-box {
+    background: white;
+    border: 3px solid var(--accent);
+}
+
+.concept-box h3 {
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.big-idea {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    margin: var(--spacing-md) 0;
+}
+
+/* ===========================
+   GRIDS DE EJEMPLOS
+   =========================== */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.example-card {
+    background: white;
+    border: 2px solid var(--light);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.example-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.example-card .icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.example-card h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.explore-btn {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+/* ===========================
+   ANALOGÍAS Y VISUALIZACIONES
+   =========================== */
+.analogy-box {
+    background: #e3f2fd;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-lg) 0;
+}
+
+.analogy-box h3 {
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.mountain-visual {
+    text-align: center;
+}
+
+.mountain-svg {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.label {
+    font-size: 14px;
+    fill: var(--primary);
+    font-weight: 600;
+}
+
+.caption {
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+    color: #666;
+}
+
+/* ===========================
+   ENTALPÍA
+   =========================== */
+.enthalpy-types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.type {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.type.exothermic {
+    background: #ffebee;
+    border: 2px solid var(--color-exothermic);
+}
+
+.type.endothermic {
+    background: #e3f2fd;
+    border: 2px solid var(--color-endothermic);
+}
+
+.type h4 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.formula {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    margin: var(--spacing-xs) 0;
+}
+
+.example-mini {
+    background: rgba(255,255,255,0.6);
+    padding: var(--spacing-xs);
+    border-radius: 4px;
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-mono);
+}
+
+.delta {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+/* ===========================
+   CALCULADORAS INTERACTIVAS
+   =========================== */
+.interactive-calculator,
+.interactive-gibbs,
+.interactive-equilibrium {
+    background: #f5f5f5;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-lg) 0;
+    border: 2px solid var(--accent);
+}
+
+.interactive-calculator h4,
+.interactive-gibbs h4,
+.interactive-equilibrium h4 {
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.calc-inputs,
+.calc-group,
+.calc-inputs-eq {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.calc-inputs label,
+.calc-group label,
+.calc-inputs-eq label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.calc-inputs input,
+.calc-group input,
+.calc-inputs-eq input {
+    width: 150px;
+    padding: var(--spacing-xs);
+    border: 2px solid var(--light);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.calc-inputs input:focus,
+.calc-group input:focus,
+.calc-inputs-eq input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+#calc-enthalpy,
+#calc-gibbs,
+#calc-equilibrium,
+.calc-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#calc-enthalpy:hover,
+#calc-gibbs:hover,
+#calc-equilibrium:hover,
+.calc-btn:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+.calc-result,
+.gibbs-result,
+.eq-result {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gibbs-interpretation {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ===========================
+   REVEAL ANSWERS
+   =========================== */
+.reveal-answer {
+    margin-top: var(--spacing-md);
+}
+
+.reveal-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--warning);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reveal-btn:hover {
+    background: darkorange;
+    transform: scale(1.05);
+}
+
+.answer {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: white;
+    border-left: 4px solid var(--success);
+    border-radius: var(--border-radius);
+    animation: slideDown 0.5s ease;
+}
+
+.answer.hidden {
+    display: none;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+/* ===========================
+   SIMULADOR DE MICROESTADOS
+   =========================== */
+.microstate-simulator {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent);
+    margin: var(--spacing-lg) 0;
+}
+
+.simulator-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.simulator-controls label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.simulator-controls input[type="range"] {
+    flex: 1;
+    max-width: 300px;
+}
+
+.simulator-canvas {
+    background: #f9f9f9;
+    border: 2px solid var(--light);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+#particleCanvas {
+    border: 1px solid #ddd;
+    background: white;
+}
+
+.simulator-stats {
+    margin-top: var(--spacing-md);
+    display: flex;
+    justify-content: space-around;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.simulator-stats span {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* ===========================
+   REGLAS DE ENTROPÍA
+   =========================== */
+.entropy-rules {
+    margin: var(--spacing-lg) 0;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.rule-card {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--light);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.rule-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.comparison {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.higher {
+    color: var(--success);
+}
+
+.medium {
+    color: var(--warning);
+}
+
+.lower {
+    color: var(--danger);
+}
+
+/* ===========================
+   CASOS DE ESTUDIO
+   =========================== */
+.entropy-examples,
+.case-study-detailed {
+    margin: var(--spacing-lg) 0;
+}
+
+.case-study {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.case-study h5 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.reaction {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    padding: var(--spacing-sm);
+    background: var(--light);
+    border-radius: 4px;
+    margin: var(--spacing-sm) 0;
+}
+
+.analysis {
+    margin-top: var(--spacing-sm);
+}
+
+.analysis p {
+    margin: var(--spacing-xs) 0;
+}
+
+.conclusion {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.conclusion.positive {
+    background: #e8f5e9;
+    color: var(--success);
+}
+
+.conclusion.negative {
+    background: #ffebee;
+    color: var(--danger);
+}
+
+.conclusion.equilibrium {
+    background: #fff9c4;
+    color: var(--warning);
+}
+
+/* ===========================
+   FÓRMULAS
+   =========================== */
+.formula-box {
+    background: var(--light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin: var(--spacing-md) 0;
+}
+
+.formula-main {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: var(--spacing-md) 0;
+}
+
+.formula-explanation {
+    font-size: 1rem;
+    color: #666;
+}
+
+.formula-box.gibbs-formula {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.formula-box.gibbs-formula .formula-main {
+    color: white;
+}
+
+.formula-parts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.formula-parts .part {
+    background: rgba(255,255,255,0.2);
+    padding: var(--spacing-xs);
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* ===========================
+   TABLA DE PREDICCIÓN
+   =========================== */
+.prediction-table {
+    margin: var(--spacing-lg) 0;
+    overflow-x: auto;
+}
+
+.prediction-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.prediction-table th,
+.prediction-table td {
+    padding: var(--spacing-sm);
+    text-align: center;
+    border: 1px solid var(--light);
+}
+
+.prediction-table th {
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+}
+
+.prediction-table tr.always-spontaneous {
+    background: #e8f5e9;
+}
+
+.prediction-table tr.never-spontaneous {
+    background: #ffebee;
+}
+
+.prediction-table tr.temperature-dependent-low,
+.prediction-table tr.temperature-dependent-high {
+    background: #fff3e0;
+}
+
+/* ===========================
+   BATALLA VISUAL
+   =========================== */
+.battle-visual {
+    margin: var(--spacing-lg) 0;
+}
+
+.forces {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.force {
+    flex: 1;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.enthalpy-force {
+    background: #ffebee;
+    border: 3px solid var(--color-exothermic);
+}
+
+.entropy-force {
+    background: #e3f2fd;
+    border: 3px solid var(--color-endothermic);
+}
+
+.force h5 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.favors {
+    font-weight: 600;
+    margin: var(--spacing-xs) 0;
+}
+
+.vs {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--warning);
+}
+
+/* ===========================
+   DIAGRAMA DE ENERGÍA
+   =========================== */
+.energy-diagram,
+.valley-visual {
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.reaction-diagram,
+.valley-diagram {
+    max-width: 100%;
+    height: auto;
+}
+
+.diagram-label {
+    font-size: 14px;
+    font-weight: 700;
+    fill: var(--primary);
+}
+
+.diagram-label-small {
+    font-size: 11px;
+    fill: #666;
+}
+
+.axis-label {
+    font-size: 12px;
+    fill: #666;
+    font-weight: 600;
+}
+
+.valley-label {
+    font-size: 13px;
+    fill: var(--primary);
+}
+
+.equilibrium-text {
+    font-size: 16px;
+    font-weight: 700;
+    fill: var(--success);
+}
+
+.arrow-label {
+    font-size: 12px;
+    fill: var(--danger);
+    font-weight: 600;
+}
+
+/* ===========================
+   DISTINCIÓN TERMODINÁMICA-CINÉTICA
+   =========================== */
+.distinction-box {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.distinction-box h3 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.column {
+    background: rgba(255,255,255,0.95);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    color: var(--primary);
+}
+
+.column h4 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.3rem;
+}
+
+.column.thermo h4 {
+    color: var(--equilibrium);
+}
+
+.column.kinetic h4 {
+    color: var(--warning);
+}
+
+.question-label {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.criteria {
+    margin: var(--spacing-md) 0;
+}
+
+.criteria p {
+    margin: var(--spacing-xs) 0;
+}
+
+.analogy-mini {
+    background: var(--light);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-style: italic;
+}
+
+/* ===========================
+   EJEMPLOS RECONCILIADORES
+   =========================== */
+.examples-reconciliation {
+    margin: var(--spacing-lg) 0;
+}
+
+.example-detailed {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--light);
+    margin-bottom: var(--spacing-lg);
+}
+
+.example-detailed h5 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--accent);
+}
+
+.example-content {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.thermo-analysis,
+.kinetic-analysis {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+.thermo-analysis {
+    background: #f3e5f5;
+    border-left: 4px solid var(--equilibrium);
+}
+
+.kinetic-analysis {
+    background: #fff3e0;
+    border-left: 4px solid var(--warning);
+}
+
+.thermo-analysis h6,
+.kinetic-analysis h6 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.verdict {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: var(--spacing-sm) 0;
+}
+
+.verdict.spontaneous {
+    color: var(--success);
+}
+
+.verdict.non-spontaneous {
+    color: var(--danger);
+}
+
+.implication {
+    font-style: italic;
+    color: #666;
+}
+
+.conclusion-box {
+    background: var(--light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-md);
+}
+
+/* ===========================
+   KEY INSIGHT BOX
+   =========================== */
+.key-insight-box {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.key-insight-box h4 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.insight-content {
+    background: rgba(255,255,255,0.95);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    color: var(--primary);
+}
+
+.big-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: var(--spacing-sm) 0;
+}
+
+.metaphor {
+    background: var(--light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-md);
+}
+
+.metaphor p {
+    margin: var(--spacing-xs) 0;
+}
+
+/* ===========================
+   EQUILIBRIO
+   =========================== */
+.fundamental-equation {
+    margin: var(--spacing-lg) 0;
+}
+
+.equation-derivation {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.step {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--light);
+    text-align: center;
+}
+
+.step.highlight {
+    border-left-color: var(--accent);
+    background: #e3f2fd;
+}
+
+.step.final {
+    border-left-color: var(--success);
+    background: #e8f5e9;
+}
+
+.eq {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.eq-main {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--success);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ===========================
+   TABLA DE CONEXIÓN
+   =========================== */
+.connection-table {
+    margin: var(--spacing-lg) 0;
+    overflow-x: auto;
+}
+
+.connection-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.connection-table th,
+.connection-table td {
+    padding: var(--spacing-md);
+    text-align: center;
+    border: 1px solid var(--light);
+}
+
+.connection-table th {
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
